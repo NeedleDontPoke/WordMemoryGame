@@ -14,21 +14,6 @@ Word Memory Game is a simple word memory game implemented in Python using the Tk
 - Python 3.x
 - Tkinter (usually included with Python installations)
 
-## Installation
-
-1. Clone the repository:
-
-    ```bash
-    git clone https://github.com/your-username/word-memory-game.git
-    cd word-memory-game
-    ```
-
-2. Run the game:
-
-    ```bash
-    python word_memory_game.py
-    ```
-
 ## Usage
 
 1. Launch the game by running the script.
