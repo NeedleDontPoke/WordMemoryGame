@@ -13,8 +13,8 @@ Word Memory Game is a simple word memory game implemented in Python using the Tk
 
 - Python 3.x
 - Tkinter (usually included with Python installations)
-- numpy
-- portalocker
+- Numpy
+- Portalocker
 
 ## Usage
 
