@@ -13,6 +13,8 @@ Word Memory Game is a simple word memory game implemented in Python using the Tk
 
 - Python 3.x
 - Tkinter (usually included with Python installations)
+- numpy
+- portalocker
 
 ## Usage
 
@@ -22,14 +24,6 @@ Word Memory Game is a simple word memory game implemented in Python using the Tk
 4. View your score, remaining lives, and the word to remember.
 5. Continue playing until you either complete the game or run out of lives.
 
-## Screenshots
-
-![Game Screenshot](screenshots/game_screenshot.png)
-
 ## Contributing
 
 Contributions are welcome! If you have any suggestions, bug reports, or improvements, feel free to open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
