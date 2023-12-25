@@ -72,7 +72,6 @@ class WordMemory:
                 # 从已经出现过的单词中随机选择一个单词，确保不同于上一次显示的单词
                 available_words = self.words_seen.copy()
                 available_words.discard(self.last_word)
-
             if available_words:
                 selected_element = random.choice(list(available_words))
                 self.last_word = selected_element
