@@ -1,3 +1,4 @@
+from functools import lru_cache
 from os import remove
 from os.path import exists
 from tkinter import Tk, StringVar, Menu, messagebox, LEFT
@@ -65,18 +66,17 @@ class WordMemory:
         while True:
             if not self.words_seen or random.choice([True, False], p=[0.65, 0.35]):
                 # 从没有出现过的单词中随机选择一个单词，确保不同于上一次显示的单词
-                available_words = [word for word in self.__document if
-                                   word not in self.words_seen and word != self.last_word]
+                available_words = set(self.__document) - self.words_seen
+                available_words.discard(self.last_word)
             else:
                 # 从已经出现过的单词中随机选择一个单词，确保不同于上一次显示的单词
                 available_words = self.words_seen.copy()
-                if self.last_word is not None:
-                    available_words.discard(self.last_word)
+                available_words.discard(self.last_word)
+
             if available_words:
                 selected_element = random.choice(list(available_words))
-                if selected_element != self.last_word:
-                    self.last_word = selected_element
-                    return selected_element
+                self.last_word = selected_element
+                return selected_element
 
     def judge(self, choice, word):
         # 判断用户的选择是否正确，更新分数、生命值和单词状态
@@ -130,6 +130,7 @@ class GameWindow:
         self.run_game()
 
     @staticmethod
+    @lru_cache(maxsize=3)
     def choose_game_mode(choice):
         # 返回对应的文件名和生命值
         modes = {
